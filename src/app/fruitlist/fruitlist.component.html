@@ -12,11 +12,30 @@
             <div>
                 <p><b>Bewertung:</b></p>
                 <div>
+                    @for(count of [1,2,3,4,5]; track fruitlist) {
+
+                    <!-- @if(fruit.stars >= count) {
                     <img src="./assets/img/stars/star.svg" alt="" srcset="">
-                    <img src="./assets/img/stars/star.svg" alt="" srcset="">
-                    <img src="./assets/img/stars/star.svg" alt="" srcset="">
+                    } @else if (fruit.stars >= count - 0.5) {
                     <img src="./assets/img/stars/star-half.svg" alt="" srcset="">
+                    } @else {
                     <img src="./assets/img/stars/star-empty.svg" alt="" srcset="">
+                    } -->
+
+                    @switch (true) {
+                        @case(fruit.stars >= count) {
+                            <img src="./assets/img/stars/star.svg" alt="" srcset="">    
+                        }
+                        @case(fruit.stars >= count - 0.5) {
+                            <img src="./assets/img/stars/star-half.svg" alt="" srcset="">  
+                        }
+                        @default {
+                            <img src="./assets/img/stars/star-empty.svg" alt="" srcset="">
+                        }
+                    }
+
+                    }
+
                     <p>({{fruit.stars}})</p>
                 </div>
             </div>
@@ -25,11 +44,11 @@
             <div>
                 <div>
                     @for (review of fruit.reviews; track review) {
-                        <div><b>{{review.name}}:</b><br>{{review.text}}</div>
+                    <div><b>{{review.name}}:</b><br>{{review.text}}</div>
                     } @empty {
-                        <div>no comments!</div>  
+                    <div>no comments!</div>
                     }
-                    
+
                 </div>
                 <div><input type="text"><button><img src="./assets/img/arrow-35-32.png" alt="" srcset=""></button>
                 </div>
