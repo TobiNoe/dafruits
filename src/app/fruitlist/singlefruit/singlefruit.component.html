@@ -9,15 +9,15 @@
             <div>
                 @for(count of [1,2,3,4,5]; track fruit) {
 
-                <!-- @if(fruit.stars >= count) {
+                @if(fruit.stars >= count) {
                 <img src="./assets/img/stars/star.svg" alt="" srcset="">
                 } @else if (fruit.stars >= count - 0.5) {
                 <img src="./assets/img/stars/star-half.svg" alt="" srcset="">
                 } @else {
                 <img src="./assets/img/stars/star-empty.svg" alt="" srcset="">
-                } -->
+                }
 
-                @switch (true) {
+                <!-- @switch (true) {
                     @case(fruit.stars >= count) {
                         <img src="./assets/img/stars/star.svg" alt="" srcset="">    
                     }
@@ -27,7 +27,7 @@
                     @default {
                         <img src="./assets/img/stars/star-empty.svg" alt="" srcset="">
                     }
-                }
+                } -->
 
                 }
 

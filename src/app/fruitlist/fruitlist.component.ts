@@ -11,9 +11,6 @@ import { SinglefruitComponent } from './singlefruit/singlefruit.component';
 })
 export class FruitlistComponent {
 
-  /* fontColorGood = 'green';
-  fontColorBad = 'red'; */
-
   fruitlist = [
     {
       name: "Apfel",
@@ -62,19 +59,14 @@ export class FruitlistComponent {
       genus: "Pflanzenart aus der Familie der  Rautengewächse",
       stars: 4.7,
       reviews: [{ name: "Kevin W.", text: "Ganz gut in der Regel!" }, { name: "Oliver J.", text: "Absoluter Favorit beim Frühstück" }],
-    },
-  ]
+    }
+  ];
 
   numLog(index:number){
     console.log(index);
   }
 
-  stringLog(fruitName: string){
+  stringLog(fruitName: object){
     console.log(fruitName);
   }
-
-  /* fontColor(stars: number) {
-    return {fontColorBad: stars < 3, fontColorGood: stars >= 3};
-  } */
-
 }
