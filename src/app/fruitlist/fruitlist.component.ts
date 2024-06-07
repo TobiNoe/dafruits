@@ -65,10 +65,12 @@ export class FruitlistComponent {
     },
   ]
 
-  
-
-  fontColor(stars: number) {
-    return {fontColorBad: stars < 3, fontColorGood: stars >= 3};
+  numLog(index:number){
+    console.log(index);
   }
+
+  /* fontColor(stars: number) {
+    return {fontColorBad: stars < 3, fontColorGood: stars >= 3};
+  } */
 
 }
