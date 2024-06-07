@@ -1,17 +1,18 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { SinglefruitComponent } from './singlefruit/singlefruit.component';
 
 @Component({
   selector: 'app-fruitlist',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SinglefruitComponent],
   templateUrl: './fruitlist.component.html',
   styleUrl: './fruitlist.component.scss'
 })
 export class FruitlistComponent {
 
-  fontColorGood = 'green';
-  fontColorBad = 'red';
+  /* fontColorGood = 'green';
+  fontColorBad = 'red'; */
 
   fruitlist = [
     {
@@ -63,4 +64,11 @@ export class FruitlistComponent {
       reviews: [{ name: "Kevin W.", text: "Ganz gut in der Regel!" }, { name: "Oliver J.", text: "Absoluter Favorit beim Frühstück" }],
     },
   ]
+
+  
+
+  fontColor(stars: number) {
+    return {fontColorBad: stars < 3, fontColorGood: stars >= 3};
+  }
+
 }
