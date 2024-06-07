@@ -69,6 +69,10 @@ export class FruitlistComponent {
     console.log(index);
   }
 
+  stringLog(fruitName: string){
+    console.log(fruitName);
+  }
+
   /* fontColor(stars: number) {
     return {fontColorBad: stars < 3, fontColorGood: stars >= 3};
   } */
