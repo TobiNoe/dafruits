@@ -62,11 +62,11 @@ export class FruitlistComponent {
     }
   ];
 
-  nameLog(name:string){
-    console.log(name);
-  }
-
-  stringLog(fruitName: object){
-    console.log(fruitName);
+  addComment(comment: string, index: number) {
+    /* console.log(comment); */
+    this.fruitlist[index].reviews.push({
+      name: "Tobias N.",
+      text: comment
+    });
   }
 }

@@ -1,14 +1,15 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-singlefruit',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './singlefruit.component.html',
   styleUrl: './singlefruit.component.scss'
 })
 export class SinglefruitComponent {
-  @Input()fruit = {
+  @Input() fruit = {
     name: "Apfel",
     img: "apple.png",
     description: "Äpfel sind aufgrund ihres hohen Wassergehalts kalorienarm und enthalten nur Spuren von Fett und Eiweiß, dafür aber rund zwei Prozent Ballaststoffe und etwa elf Prozent Kohlenhydrate. Äpfel enthalten auch viele Vitamine und Mineralstoffe und sind daher eine wichtige Quelle für uns - zum Beispiel für Vitamin C.",
@@ -17,9 +18,12 @@ export class SinglefruitComponent {
     reviews: [{ name: "Waldemar W.", text: "gut für Obstsalat" }, { name: "Olaf P.", text: "Kann man mal machen" }],
   };
 
-  @Output()fruitname = new EventEmitter<string>();
+  inputData = "";
 
-  emitName(){
-    this.fruitname.emit(this.fruit.name);
+  @Output() comment = new EventEmitter<string>();
+
+  sendInputData() {
+    this.comment.emit(this.inputData);
+    this.inputData = "";
   }
 }
