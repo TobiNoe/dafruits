@@ -62,8 +62,8 @@ export class FruitlistComponent {
     }
   ];
 
-  numLog(index:number){
-    console.log(index);
+  nameLog(name:string){
+    console.log(name);
   }
 
   stringLog(fruitName: object){
